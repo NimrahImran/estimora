@@ -1,0 +1,63 @@
+{
+ "cleaning": {
+  "rawRows": 1600162,
+  "duplicates": 35598,
+  "zeroPrice": 463013,
+  "belowMinimum": 26171,
+  "cleanRows": 1075380
+ },
+ "range": {
+  "start": "2003-01",
+  "end": "2019-12"
+ },
+ "kpis": {
+  "sales": 1075380,
+  "value": 1358978852,
+  "median": 493000,
+  "lastYear": 2019,
+  "lastYearSales": 55523,
+  "lastYearValue": 114861296,
+  "lastYearMedian": 700000,
+  "salesYoY": -2.2,
+  "medianYoY": 4.6
+ },
+ "insights": {
+  "peakYear": 2004,
+  "peakSales": 89124,
+  "lowYear": 2010,
+  "lowSales": 43558,
+  "busiestMonth": 6,
+  "busiestIndex": 113.7,
+  "quietMonth": 2,
+  "quietIndex": 86.3,
+  "topBorough": "Manhattan",
+  "topBoroughShare": 54.9
+ },
+ "byBoroughYear": {
+  "Manhattan": {
+   "sales": 13410,
+   "value": 63057175,
+   "median": 1225000
+  },
+  "Brooklyn": {
+   "sales": 14535,
+   "value": 24132528,
+   "median": 824000
+  },
+  "Queens": {
+   "sales": 16941,
+   "value": 18836866,
+   "median": 585000
+  },
+  "Bronx": {
+   "sales": 5169,
+   "value": 5354902,
+   "median": 490000
+  },
+  "Staten Island": {
+   "sales": 5468,
+   "value": 3479823,
+   "median": 539988
+  }
+ }
+}
