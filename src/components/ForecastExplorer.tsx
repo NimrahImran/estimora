@@ -23,7 +23,8 @@ export default function ForecastExplorer() {
       { x: x.months.map(d).concat([...x.months].reverse().map(d)), y: x.high.map((v) => v * s).concat([...x.low].reverse().map((v) => v * s)), fill: "toself", fillcolor: "rgba(197,138,18,.22)", line: { color: "rgba(0,0,0,0)" }, type: "scatter", name: "Likely range", hoverinfo: "skip" },
       { x: x.historyMonths.map(d), y: x.history.map((v) => (v === null ? null : v * s)), type: "scatter", mode: "lines", name: "Actual", line: { color: "#5E1B41", width: 2.2 }, hovertemplate: `${hv}%{y:,.0f}<extra>Actual</extra>` },
       { x: x.holdoutMonths.map(d), y: x.holdoutPredicted.map((v) => v * s), type: "scatter", mode: "lines+markers", name: "Test prediction", line: { color: "#0E8F7E", width: 2, dash: "dot" }, marker: { size: 8, line: { color: "#fff", width: 2 } }, hovertemplate: `${hv}%{y:,.0f}<extra>Test prediction</extra>` },
-      { x: fx, y: [lastV === null ? null : lastV * s, ...x.forecast.map((v) => v * s)], type: "scatter", mode: "lines+markers", name: "Forecast", line: { color: "#C58A12", width: 2.6 }, marker: { size: 9, line: { color: "#fff", width: 2 } }, hovertemplate: `${hv}%{y:,.0f}<extra>Forecast</extra>` },
+      { x: fx.slice(0, 2), y: [lastV === null ? null : lastV * s, x.forecast[0] * s], type: "scatter", mode: "lines", showlegend: false, hoverinfo: "skip", line: { color: "#C58A12", width: 2.6 } },
+      { x: x.months.map(d), y: x.forecast.map((v) => v * s), type: "scatter", mode: "lines+markers", name: "Forecast", line: { color: "#C58A12", width: 2.6 }, marker: { size: 9, line: { color: "#fff", width: 2 } }, hovertemplate: `${hv}%{y:,.0f}<extra>Forecast</extra>` },
     ];
   }, [r.data, t, s]);
   const layout = useMemo(() => ({ yaxis: { tickprefix: t === "count" ? "" : "$", tickformat: "~s" }, xaxis: { type: "date", hoverformat: "%b %Y" }, legend: { orientation: "h", x: 0, y: 1.14 } }), [t]);

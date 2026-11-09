@@ -33,7 +33,8 @@ export default function Upload() {
     return [
       { x: f.map((p) => d(p.month)).concat([...f].reverse().map((p) => d(p.month))), y: f.map((p) => p.high).concat([...f].reverse().map((p) => p.low)), fill: "toself", fillcolor: "rgba(197,138,18,.22)", line: { color: "rgba(0,0,0,0)" }, type: "scatter", name: "Likely range", hoverinfo: "skip" },
       { x: h.map((p) => d(p.month)), y: h.map((p) => p.value), type: "scatter", mode: "lines", name: "Your sales", line: { color: "#5E1B41", width: 2.2 }, hovertemplate: "%{y:,.2f}<extra>Your sales</extra>" },
-      { x: [d(l.month), ...f.map((p) => d(p.month))], y: [l.value, ...f.map((p) => p.value)], type: "scatter", mode: "lines+markers", name: "Forecast", line: { color: "#C58A12", width: 2.6 }, marker: { size: 9, line: { color: "#fff", width: 2 } }, hovertemplate: "%{y:,.2f}<extra>Forecast</extra>" },
+      { x: [d(l.month), d(f[0].month)], y: [l.value, f[0].value], type: "scatter", mode: "lines", showlegend: false, hoverinfo: "skip", line: { color: "#C58A12", width: 2.6 } },
+      { x: f.map((p) => d(p.month)), y: f.map((p) => p.value), type: "scatter", mode: "lines+markers", name: "Forecast", line: { color: "#C58A12", width: 2.6 }, marker: { size: 9, line: { color: "#fff", width: 2 } }, hovertemplate: "%{y:,.2f}<extra>Forecast</extra>" },
     ];
   }, [res]);
   const layout = useMemo(() => ({ xaxis: { type: "date", hoverformat: "%b %Y" }, yaxis: { tickformat: "~s" } }), []);
