@@ -11,7 +11,7 @@ export default function Page() {
           <p>I&apos;m an AI Engineer who builds forecasting models, data dashboards, chatbots, and AI automation for businesses.</p>
           <p>Estimora takes about 1.6 million public property records, removes what isn&apos;t a real sale, tests three forecasting models, and explains the result in plain language.</p>
           <p>Have your own sales data? I can build this for your business.</p>
-          <p><a href="mailto:nimrahimran28@gmail.com">nimrahimran28@gmail.com</a><br /><a href="https://github.com/NimrahImran/estimora">View the code on GitHub</a></p>
+          <p><a href="https://github.com/NimrahImran/estimora">View the code on GitHub</a></p>
           <h3 style={{ marginTop: 24 }}>Data source</h3>
           <p>New York City Department of Finance sales records, 2003 to 2019, from a public cleaned copy of the official files. Estimora is an independent portfolio project and isn&apos;t affiliated with New York City.</p>
         </div>

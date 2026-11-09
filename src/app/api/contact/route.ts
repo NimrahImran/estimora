@@ -25,7 +25,7 @@ export async function POST(req: Request) {
   if (recent.length >= 5) return fail("Too many messages in one hour. Try again later.", 429);
 
   const user = process.env.GMAIL_USER, pass = process.env.GMAIL_APP_PASSWORD?.replace(/\s/g, "");
-  if (!user || !pass) return fail("The contact form isn't connected yet. Email nimrahimran28@gmail.com instead.", 503);
+  if (!user || !pass) return fail("The contact form isn't available right now. Try again later.", 503);
   try {
     const t = nodemailer.createTransport({ service: "gmail", auth: { user, pass } });
     await t.sendMail({
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
     });
   } catch (e) {
     console.error("contact mail failed", e instanceof Error ? e.message : "unknown");
-    return fail("The message couldn't be sent. Try again, or email nimrahimran28@gmail.com.", 502);
+    return fail("The message couldn't be sent. Try again in a few minutes.", 502);
   }
   recent.push(now); hits.set(ip, recent);
   return NextResponse.json({ ok: true });
