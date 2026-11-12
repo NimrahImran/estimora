@@ -76,7 +76,7 @@ html{scroll-behavior:smooth}
 h2{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:clamp(28px,3vw,42px);line-height:1.12;letter-spacing:-.015em;color:var(--plum-deep)}
 h3{font-size:17px;font-weight:800;color:var(--plum-deep);line-height:1.35}
 .sub{font-size:14px;font-weight:500;color:#6A4A5B;line-height:1.5;margin-top:3px}
-.section{padding:clamp(48px,6vw,84px) 0}
+.section{padding-top:clamp(48px,6vw,84px);padding-bottom:clamp(48px,6vw,84px)}
 .panel{background:var(--white);border:1px solid #EBD4DD;border-radius:20px;padding:clamp(16px,2vw,26px);min-width:0}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .stack{display:grid;gap:18px}
